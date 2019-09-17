@@ -1,7 +1,9 @@
-import java.util.Arrays;
+//import java.util.Arrays;
+import java.util.Scanner;
 
 public class ControlFlowExercises {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 //        Loop Basics
 //        Do While
 
@@ -65,14 +67,26 @@ public class ControlFlowExercises {
 //        }
 
 //        For numbers which are multiples of both three and five: print “FizzBuzz”.
-        for (int i = 1; i <= 100; i++){
+//        for (int i = 1; i <= 100; i++){
+//
+//            if (i % 3 == 0 && i % 5 == 0){
+//                System.out.println("FizzBuzz");
+//            }else if (i % 3 == 0){
+//                System.out.println("Fizz");
+//            }else if (i % 5 == 0){
+//                System.out.println("Buzz");
+//            }
+//            else{
+//                System.out.println(i);
+//            }
+//        }
 
-            if (i % 3 == 0 && i % 5 == 0){
-                System.out.println("FizzBuzz");
-            }else{
-                System.out.println(i);
-            }
-        }
+//========Display a table of powers.
+//        Prompt the user to enter an integer.
+        System.out.println("Enter your number...");
+        int userNum =  Integer.parseInt(input.nextLine());
+        System.out.println(userNum);
+
 
 
 
