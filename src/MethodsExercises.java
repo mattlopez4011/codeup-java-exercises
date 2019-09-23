@@ -12,8 +12,9 @@ public class MethodsExercises {
 //        System.out.println(multiplyWLoopFunction(5,5)); // Call and Returns multiply W Loop Function
 //        System.out.println(multiplyWRecursion(5,5)); // Call and Returns multiply W Recursion Function
 //        System.out.println("Please enter a number between 1 and 10");
-        System.out.println(getInteger(1, 10));
-
+//        System.out.println(getInteger(1, 10));
+//        RollDice();
+        fizzBuzzLoop(1);
 
 
 
@@ -21,6 +22,28 @@ public class MethodsExercises {
     } // End of main
 
 
+    public static void fizzBuzzLoop(int i) {
+        if (i <= 100){
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+                    i++;
+                    fizzBuzzLoop(i);
+
+            } else if (i % 3 == 0) {
+                System.out.println("Fizz");
+                    i++;
+                    fizzBuzzLoop(i);
+            } else if (i % 5 == 0) {
+                System.out.println("Buzz");
+                    i++;
+                    fizzBuzzLoop(i);
+            } else {
+                System.out.println(i);
+                    i++;
+                    fizzBuzzLoop(i);
+            }
+        } // End of if
+    }
 
 
 
@@ -205,9 +228,14 @@ public class MethodsExercises {
 
 
 
-}
+};
 
 
 
 //=============================================
+//Create an application that simulates dice rolling.
 
+
+//    public static String RollDice() {
+//
+//        }
