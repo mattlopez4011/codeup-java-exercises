@@ -13,8 +13,8 @@ public class MethodsExercises {
 //        System.out.println(multiplyWRecursion(5,5)); // Call and Returns multiply W Recursion Function
 //        System.out.println("Please enter a number between 1 and 10");
 //        System.out.println(getInteger(1, 10));
-//        RollDice();
-        fizzBuzzLoop(1);
+        rollDice();
+//        fizzBuzzLoop(1);
 
 
 
@@ -228,14 +228,43 @@ public class MethodsExercises {
 
 
 
-};
+
 
 
 
 //=============================================
 //Create an application that simulates dice rolling.
+    public static void rollDice() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number for pair of dice?");
+        int userNum = Integer.parseInt(input.nextLine()); // Number the user entered for the dice.
+        System.out.println("Would you like to roll the dice?  [ yes | no ]" );
+        String userRollDiceAnswer = input.nextLine();
+//        Checking if the user would like to roll the dice
+        if (userRollDiceAnswer.equalsIgnoreCase("no")){
+            System.out.println("Have a great day!");
+        }else{
+            System.out.println("Roll...");
+            System.out.println("...");
+            System.out.println("");
+            int diceOneNum = (int) (Math.random() * userNum) + 1;
+            int diceTwoNum = (int) (Math.random() * userNum) + 1;
+            System.out.println("Dice one is: " + diceOneNum);
+            System.out.println("Dice two is: " + diceTwoNum);
+        }
+
+//        Ask user if they would like to play again?
+        System.out.println("Would you like to roll the dice again?");
+        String rollAgainAnswer = input.nextLine();
+        if(rollAgainAnswer.equalsIgnoreCase("no")){
+            System.out.println("No problem! Have a wonderful day!");
+        }else{
+//            Run method again if player says they want to play again.
+            rollDice();
+        }
+
+    }
 
 
-//    public static String RollDice() {
-//
-//        }
+
+} // End of Methods Exercises class
