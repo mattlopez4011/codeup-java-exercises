@@ -76,8 +76,8 @@ public class Input {
         }
     }
 
-    public int getDouble(){
-        System.out.println("Enter a number between 1 and 10: " );
+    public double getDouble(String prompt){
+        System.out.println(prompt);
         return Double.parseDouble(this.scanner.nextLine());
 
     }
