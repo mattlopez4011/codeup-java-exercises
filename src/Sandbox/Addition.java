@@ -7,12 +7,12 @@ public class Addition {
         return (firstNumber + secondNumber);
     }
 //=====Default Constructor
-    Addition(){
+    public Addition(){
         firstNumber = 10;
         secondNumber = 20;
     }
 //======Second Constructor
-    Addition(int L, int B){
+    public Addition(int L, int B){
         firstNumber = L;
         secondNumber = B;
     }

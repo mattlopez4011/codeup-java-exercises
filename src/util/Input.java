@@ -8,80 +8,60 @@ public class Input {
 
     //    Constructor
     public Input(){
-        this.scanner = new Scanner(System.in);
+        this.scanner = new Scanner(System.in); // init new scanner variable
     }
 
 
     //  Method
-    String getString(){
-        System.out.println("Enter something:");
+    public String getString(){
         return this.scanner.nextLine();
     }
 
-    boolean yesNo(){
+    public String getString(String prompt){
+        if (prompt.isEmpty()){
+            System.out.println("Enter something:");
+        }else {
+            System.out.println(prompt);
+        }
+
+        return getString(); //returns the scanner.nextLine()
+    }
+
+    public boolean yesNo(){
         System.out.println("y / n");
-
-        String checked = scanner.nextLine();
-
+        String checked = this.scanner.nextLine();
         return (checked.equalsIgnoreCase("y") | checked.equalsIgnoreCase("yes"));
 
     }
 
-    int getInt(int min, int max){
+    public int getInt(int min, int max){
         System.out.println("Enter a number between " + min + " and " + max + ": ");
         if(scanner.hasNextInt()){
-            System.out.println("Valid input!");
-
-            int userNum = Integer.parseInt(scanner.nextLine());
+            int userNum = Integer.parseInt(this.scanner.nextLine());
             if (userNum >= min && userNum <= max ){
-                System.out.println("Correct!");
-                System.out.print("You entered " );
-                return userNum;
-
+                return userNum; // if user num is within the range, return user num
             }else {
                 System.out.println("INCORRECT! Please enter a number between " + min + " and " + max);
-                return getInt(min,max);
+                return getInt(min,max); // if user num is incorrect, run method again.
             }
 
         }else {
-            System.out.println("Invalid input!");
+            System.out.println("Invalid input!"); // If the user does not enter a number.
             System.out.println("Please enter a number between " + min + " and " + max);
             return getInt(min,max);
         }
     }
 
-    int getInt(){
-        System.out.println("Enter a number between 1 and 10: " );
-        if(scanner.hasNextInt()){
-            System.out.println("Valid input!");
-
-            int userNum = Integer.parseInt(scanner.nextLine());
-            if (userNum >= 1 && userNum <= 10 ){
-                System.out.println("Correct!");
-                System.out.print("You entered " );
-                return userNum;
-
-            }else {
-                System.out.println("INCORRECT! Please enter a number between 1 and 10");
-                return getInt();
-            }
-
-        }else {
-            System.out.println("Invalid input!");
-            System.out.println("Please enter a number between 1 and 10");
-            return getInt();
-        }
+    public int getInt(){
+        System.out.println("Give me a number: ");
+        return Integer.parseInt(this.scanner.nextLine());
     }
 
-    double getDouble(double min, double max){
+    public double getDouble(double min, double max){
         System.out.println("Enter a number between " + min + " and " + max + ": ");
         if(scanner.hasNextInt()){
-            System.out.println("Valid input!");
-
-            int userNum = Integer.parseInt(scanner.nextLine());
+           double userNum = Double.parseDouble(scanner.nextLine());
             if (userNum >= min && userNum <= max ){
-                System.out.println("Correct!");
-                System.out.print("You entered " );
                 return userNum;
 
             }else {
@@ -96,27 +76,10 @@ public class Input {
         }
     }
 
-    int getDouble(){
+    public int getDouble(){
         System.out.println("Enter a number between 1 and 10: " );
-        if(scanner.hasNextInt()){
-            System.out.println("Valid input!");
+        return Double.parseDouble(this.scanner.nextLine());
 
-            int userNum = Integer.parseInt(scanner.nextLine());
-            if (userNum >= 1 && userNum <= 10 ){
-                System.out.println("Correct!");
-                System.out.print("You entered " );
-                return userNum;
-
-            }else {
-                System.out.println("INCORRECT! Please enter a number between 1 and 10");
-                return getDouble();
-            }
-
-        }else {
-            System.out.println("Invalid input!");
-            System.out.println("Please enter a number between 1 and 10");
-            return getDouble();
-        }
     }
 
 //    public static void main(String[] args) {
