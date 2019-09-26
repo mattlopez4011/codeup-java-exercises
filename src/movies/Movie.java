@@ -1,12 +1,12 @@
 package movies;
 
 public class Movie {
-    private String titleName;
+    private String name;
     private String category;
 
 //===========Constructor
     public  Movie(String title, String category){
-        this.titleName = title;
+        this.name = title;
         this.category = category;
 
     }
@@ -15,12 +15,12 @@ public class Movie {
     // returns the person's name
     public String getTitleName(){
 
-        return this.titleName;
+        return this.name;
     }
     // changes the name property to the passed value
     public void setTitleName(String title){
 
-        this.titleName = title;
+        this.name = title;
     }
 
     public String getCategory(){
