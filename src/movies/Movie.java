@@ -13,17 +13,26 @@ public class Movie {
 
     //========= Methods
     // returns the person's name
-    public String getMovie(){
+    public String getTitleName(){
 
-        return this.titleName + this.category;
+        return this.titleName;
     }
     // changes the name property to the passed value
-    public void setMovie(String title, String category){
+    public void setTitleName(String title){
 
         this.titleName = title;
-        this.category = category;
     }
 
+    public String getCategory(){
+
+        return this.category;
+    }
+
+    // changes the name property to the passed value
+    public void setCategory(String category){
+
+        this.category = category;
+    }
 
 
 

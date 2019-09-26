@@ -6,6 +6,7 @@ public class ArraysExercises {
 //    Add person to array
     public static Person[] addPerson(Person[] people,Person person){
         Person[] newPersonArray = Arrays.copyOf(people, people.length+1);
+
         newPersonArray[people.length ] = person;
         System.out.println(newPersonArray);
             return newPersonArray;
@@ -15,6 +16,10 @@ public class ArraysExercises {
 
 
     public static void main(String[] args) {
+    Person text = new Person("yoo, testing...");
+         System.out.println(text.getClass());
+         System.out.println("text.getName() = " + text.getName());
+
 //        int[] numbers = {1, 2, 3, 4, 5};
 //        System.out.println(Arrays.toString(numbers));
 
