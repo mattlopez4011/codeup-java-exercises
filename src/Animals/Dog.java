@@ -8,6 +8,7 @@ public class Dog extends Animal {
 //    === Constructor
     public Dog(String breed, String name, int age, String species, Boolean isAlive ){
         super(age, species,isAlive);
+//        super(age, "dog",isAlive);
         this.breed = breed;
         this.name = name;
 
