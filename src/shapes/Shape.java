@@ -1,6 +1,6 @@
 package shapes;
 
-public abstract class Shape {
-//    public abstract String work(); // reference
+abstract class Shape {
+    private String color;
 
 }
