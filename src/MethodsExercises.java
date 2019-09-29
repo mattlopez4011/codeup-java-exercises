@@ -10,11 +10,11 @@ public class MethodsExercises {
 //        System.out.println(divideFunction(10 ,5 )); // Call and Returns divide Function
 //        System.out.println(modulusFunction(9, 2 )); // Call and Returns modulus Function
 //        System.out.println(multiplyWLoopFunction(5,5)); // Call and Returns multiply W Loop Function
-//        System.out.println(multiplyWRecursion(5,5)); // Call and Returns multiply W Recursion Function
+//        System.out.println("Final num = " + multiplyWRecursion(5,5)); // Call and Returns multiply W Recursion Function
 //        System.out.println("Please enter a number between 1 and 10");
 //        System.out.println(getInteger(1, 10));
         rollDice();
-//        fizzBuzzLoop(1);
+//        fizzBuzzLoo p(1);
 
 
 
@@ -75,7 +75,7 @@ public class MethodsExercises {
         return num1 % num2;
 
     }
-
+// Bonus
     public static int multiplyWLoopFunction(int num1, int num2){
         int finalNum = 0;
         for (int i = 0; i < num1; i++){
@@ -88,11 +88,14 @@ public class MethodsExercises {
         if(num1 == 0 || num2 == 0){
             return 0;
         }else {
+
+            System.out.println("num1 = " + num1 + " num2 = " + num2);
             return (num1 + multiplyWRecursion(num1, num2 -1));
 
         }
 
     }
+
 
 
 //    public static int getInteger(int min, int max){
@@ -244,13 +247,37 @@ public class MethodsExercises {
         if (userRollDiceAnswer.equalsIgnoreCase("no")){
             System.out.println("Have a great day!");
         }else{
-            System.out.println("Roll...");
-            System.out.println("...");
-            System.out.println("");
-            int diceOneNum = (int) (Math.random() * userNum) + 1;
-            int diceTwoNum = (int) (Math.random() * userNum) + 1;
-            System.out.println("Dice one is: " + diceOneNum);
-            System.out.println("Dice two is: " + diceTwoNum);
+            try{
+                Thread.sleep(1500);
+                // Then do something meaningful...
+                System.out.println("Rolling the dice...");
+                System.out.println("...");
+            }catch(InterruptedException e){
+                e.printStackTrace();
+            }
+
+            try{
+                Thread.sleep(3500);
+                // Then do something meaningful...
+                System.out.println("Rolling the dice...");
+                System.out.println("...");
+            }catch(InterruptedException e){
+                e.printStackTrace();
+            }
+
+//
+
+            try{
+                Thread.sleep(3500);
+                // Then do something meaningful...
+                System.out.println("");
+                int diceOneNum = (int) (Math.random() * userNum) + 1;
+                int diceTwoNum = (int) (Math.random() * userNum) + 1;
+                System.out.println("Dice one is: " + diceOneNum);
+                System.out.println("Dice two is: " + diceTwoNum);
+            }catch(InterruptedException e){
+                e.printStackTrace();
+            }
         }
 
 //        Ask user if they would like to play again?

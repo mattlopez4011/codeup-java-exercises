@@ -4,6 +4,7 @@ public class HelloWorld {
 //        System.out.print("Hello, World!"); // System.out.print can be used to output information without a newline.
 //        System.out.print("Hello, Ceres!");
 
+
         int myFavoriteNumber = 21;
         System.out.println(myFavoriteNumber); // Prints out 21
 
@@ -48,6 +49,6 @@ public class HelloWorld {
         y -= x; // shorthand
         System.out.println(x);
         System.out.println(y);
-
     }
+
 }
