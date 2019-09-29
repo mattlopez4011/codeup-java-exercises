@@ -4,29 +4,52 @@ public class HighLow {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int randomNum = (int) (Math.random( )* 100) + 1; // Random Number between 1-100
-        System.out.println("Guess the magic number...");
-        String userResponse = input.nextLine();
+
         System.out.println("");
         String test = "on";
+        int counter = 0;
 
-        if (isNumber(userResponse)){
-            int userNum = Integer.parseInt(userResponse);
-            System.out.println("You entered a number :)");
+        boolean loop = true;
+        do {
+            counter++; // Counts how many times user guessed the number.
+            System.out.println("Guess the magic number...");
+            System.out.println("=========================");
+            String userResponse = input.nextLine();
+            if (isNumber(userResponse)){
+                int userNum = Integer.parseInt(userResponse); // User number
+//                System.out.println("You entered a number :)");
+                if(userNum < randomNum){
+                    System.out.println("HIGHER! Enter a higher number :)");
+                    System.out.println("");
 
-        }else{
-            System.out.println("Invalid input! Please enter a number value.");
+                }else if(userNum > randomNum){
+                    System.out.println("LOWER! Enter a lower number :)");
+                    System.out.println("");
 
-        }
+                }else{
+                    System.out.println("GOOD GUESS! You guessed the magic number " + randomNum);
+                    System.out.println("");
+                    System.out.println("You guessed " + counter + " times!");
+                    loop = false;
+                }
+
+            }else{
+                System.out.println("Invalid input! Please enter a number value.");
+
+            }
+
+        }while (loop);// End of do loop
 
     }
 
-
+// Method checks if the input is a number
     static boolean isNumber(String s)
     {
-        for (int i = 0; i < s.length(); i++)
-            if (Character.isDigit(s.charAt(i))
-                    == false)
+        for (int i = 0; i < s.length(); i++){
+            if (Character.isDigit(s.charAt(i)) == false){
                 return false;
+            }
+        }
 
         return true;
     }
@@ -37,8 +60,8 @@ public class HighLow {
 //
 //        Game picks a random number between 1 and 100. √
 //        Prompts user to guess the number.√
-//        All user inputs are validated.
-//        If user's guess is less than the number, it outputs "HIGHER".
+//        All user inputs are validated.√
+//        If user's guess is less than the number, it outputs "HIGHER".√
 //        If user's guess is more than the number, it outputs "LOWER".
 //        If a user guesses the number, the game should declare "GOOD GUESS!"
 //        Hints
