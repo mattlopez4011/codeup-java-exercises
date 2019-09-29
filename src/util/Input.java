@@ -28,7 +28,7 @@ public class Input {
     }
 
     public boolean yesNo(){
-        System.out.println("y / n");
+        System.out.println("[ y / n ]");
         String checked = this.scanner.nextLine();
         return (checked.equalsIgnoreCase("y") | checked.equalsIgnoreCase("yes"));
 
