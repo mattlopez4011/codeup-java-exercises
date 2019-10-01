@@ -1,16 +1,15 @@
 import java.util.Arrays;
 
 public class ArraysExercises {
-    static Person [] people = new Person[3];
+    static Person[] people = new Person[3];
 
 //    Add person to array
-    public static Person[] addPerson(Person[] people,Person person){
+    public static Person[] addPerson(Person[] people, Person person){
         Person[] newPersonArray = Arrays.copyOf(people, people.length+1);
 
         newPersonArray[people.length ] = person;
         System.out.println(newPersonArray);
             return newPersonArray;
-
 
     }
 
@@ -33,17 +32,18 @@ public class ArraysExercises {
 
 //        Person[] newPeople = addPerson(people, new Person("Mark"));
         Person[] newPeople = addPerson(people, new Person("Izzy")); // Add new person
+        Person[] newPeople2 = addPerson(newPeople, new Person("Kevin")); // Add new person to newPeople array :)
 
 
-//        for (String person : people){
-//            System.out.println("person = " + person);
-//        }
-//        System.out.println("people = " + Arrays.toString(people));
         for (Person onePerson : newPeople ){
-            System.out.println(onePerson.getName());
+            System.out.print(onePerson.getName()+ " ");
 //            System.out.println(onePerson);
         }
-        System.out.println(people.length);
+        System.out.println("Array length = "+people.length);
+
+        for(Person person : newPeople2){
+            System.out.print(person.getName()+ " ");
+        }
 
 
     }
