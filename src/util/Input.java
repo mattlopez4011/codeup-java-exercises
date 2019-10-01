@@ -107,7 +107,20 @@ public class Input {
 
     }
 
+    public int getBinary(){
+        int number=0;
 
+        try{
+            number = Integer.valueOf(getString("Enter a binary number: "), 2);
+        } catch(Exception e){
+            System.out.println("Uh, oh! Something went wrong!" + e.getMessage());
+            System.out.println("More detail below:");
+            e.printStackTrace();
+
+        }
+        System.out.print("Your number is ");
+        return  number;
+    }
 
 
 
