@@ -122,6 +122,22 @@ public class Input {
         return  number;
     }
 
+    public int getHex(){
+        int number=0;
+
+        try{
+            number = Integer.valueOf(getString("Enter a hexidecimal number: "), 16);
+        } catch(Exception e){
+            System.out.println("Uh, oh! Something went wrong!" + e.getMessage());
+            System.out.println("More detail below:");
+            e.printStackTrace();
+
+        }
+        System.out.print("Your number is ");
+        return  number;
+    }
+
+
 
 
 //    public static void main(String[] args) {
