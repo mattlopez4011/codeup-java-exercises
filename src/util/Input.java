@@ -55,17 +55,18 @@ public class Input {
     public int getInt(){
 //        System.out.println("Give me a number: ");
 //        return Integer.parseInt(this.scanner.nextLine());
-        int number = 0;
 
         try{
-            number = Integer.valueOf(getString("Enter a number: "));
-        } catch(Exception e){
+
+            return Integer.valueOf(getString("Enter a number: "));
+        } catch(NumberFormatException e){
             System.out.println("Uh, oh! Something went wrong!" + e.getMessage());
             System.out.println("More detail below:");
             e.printStackTrace();
+            return getInt();
 
         }
-            return number;
+
     }
 
     public double getDouble(double min, double max){
@@ -92,18 +93,16 @@ public class Input {
 //        return Double.parseDouble(this.scanner.nextLine());
 //        return Double.valueOf(this.scanner.nextLine());
 
-
-        double number = 0;
-
         try{
-            number = Double.valueOf(this.scanner.nextLine());
+            return Double.valueOf(getString());
         } catch(Exception e){
             System.out.println("Uh, oh! Something went wrong!" + e.getMessage());
             System.out.println("More detail below:");
             e.printStackTrace();
+            return getDouble(prompt);
 
         }
-        return number;
+
 
     }
 
