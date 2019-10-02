@@ -12,17 +12,21 @@ public class OOPTest {
 
         System.out.println(steve.getAll()); // Steve James Big Steve Green 25
 
-        createNewPerson();
+//        Playing with array
+        ArrayList<OOPPractice> PersonArrayList = new ArrayList<>();
+        createNewPerson(PersonArrayList);
+
 
 
 
     }
 
-    public static void createNewPerson(){
-        ArrayList<OOPPractice> PersonArrayList = new ArrayList<>();
+    public static void createNewPerson(ArrayList<OOPPractice> PersonArrayList){
+
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Array currently contains: " + PersonArrayList.toString() ); // Array starts with
+        System.out.println("Array currently contains: " + PersonArrayList ); // Array starts with
+        System.out.println("Array size: " + PersonArrayList.size() );
 
         System.out.println("What is your first name?");
         String userFirstName = input.nextLine();
@@ -38,7 +42,21 @@ public class OOPTest {
         OOPPractice newPerson = new OOPPractice(userFirstName, userLastName,userNickName, userFavColor, userAge);
         PersonArrayList.add(newPerson);
 
-        System.out.println("Array contains: " + PersonArrayList.toString() );
+//        Loop through PersonArrayList array list
+        for (OOPPractice str : PersonArrayList) {
+            System.out.println(str.getAll()); // Calling all properties with getAll() method
+        }
+//        System.out.println("Array contains: " + PersonArrayList.sort(PersonArrayList) );
+        System.out.println();
+        System.out.println("Array size: " + PersonArrayList.size() );
+
+        System.out.println("Do you want to add another person?  [ yes | no ]");
+        String userAnswer = input.nextLine();
+        if (userAnswer.equalsIgnoreCase("y") || userAnswer.equalsIgnoreCase("yes")){
+            createNewPerson(PersonArrayList);
+        }else{
+            System.out.println("Have a great day!");
+        }
     }
 
 }

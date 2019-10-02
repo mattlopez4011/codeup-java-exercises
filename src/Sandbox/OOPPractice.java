@@ -62,6 +62,7 @@ public class OOPPractice {
     }
 
     public String getAll(){
+        System.out.println("-----------------------");
         return this.firstName+" "+this.lastName+" "+this.nickName+" "+this.favColor+" "+this.age;
     }
 }
